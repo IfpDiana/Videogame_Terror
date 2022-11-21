@@ -64,5 +64,24 @@ public class PlayerController : MonoBehaviour
             isCrouching = false;
   
         }
+
+        //float y = Input.GetAxis("Jump");  //esto lo haces  para crear una variable de salto.
+
+        //Vector3 movement = transform.right * x + transform.forward * z;//Esto es para hacer la gravedad, para que se quede en el suelo.
+                                                                       //movement.y /= playerSpeed; //la  velocidad del jugador.
+
+        //movement *= playerSpeed;
+
+
+
+        //if (Input.GetButtonDown("Jump") && controller.isGrounded) //Aquí le estás diciendo si está en el suelo.
+        //{
+            //Yvelocity = 0;
+            //Yvelocity += 60f; //Usas la variable para que te detecte el salto, y le multiplicas una cantidad para conseguir la fuerza de gravedad.
+        //}
+        //Debug.Log(Yvelocity);
+        //Yvelocity -= gravityForce * Time.deltaTime;//Aquí lo que haces es que se reste y lo multiplica, IMPORTANTE RESTARLO.
+        //movement.y = Yvelocity;
+        //movement *= Time.deltaTime; //Esto es la velocidad del movimiento.
     }
 }
