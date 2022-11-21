@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float sprintingMultiplayer; //velocidad al correr
     public bool isSprinting = false; //correr
     public CharacterController controller;
+    public Camera camera;
     public LayerMask groundMask; //suelo
     public Transform groundDetectionTransform; //detector del suelo
     public bool isCrouching = false; //agacharse
@@ -33,7 +34,6 @@ public class PlayerController : MonoBehaviour
         {
             currentVelY = 0;
             currentVelY = jumpPower;
-            anim.Play("Jump");
         }
         //Debug.Log(currentVelY);
         currentVelY += gravity * Time.deltaTime;
