@@ -16,10 +16,10 @@ public class AttackState : State
     public ChaseState chaseState;
     public override State RunCurrentState()
     {
-        if (playerInAttackRange)
-        {
-            transform.LookAt(player);
-            agent.SetDestination(transform.position);
+        if (playerInAttackRange == true)
+        {    
+            agent.transform.LookAt(player);
+            agent.SetDestination(transform.position);                   
             return this;
         }
         else

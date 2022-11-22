@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Healthbar : MonoBehaviour //este código, se le asigna al jugador.
 {
@@ -12,5 +13,9 @@ public class Healthbar : MonoBehaviour //este código, se le asigna al jugador.
     {
         life = Mathf.Clamp(life, 0, 100); //hace que nuestra vida no pase del máximo ni del mínimo.
         healthbar.fillAmount = life / 100;
+        if (life <= 0)
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
 }
