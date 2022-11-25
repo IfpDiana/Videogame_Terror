@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class ChaseState : State
 {
+    Animator anim;
     public bool playerInShightRange, playerInAttackRange;
     public float sightRange, attackRange;
     public NavMeshAgent agent;
@@ -13,6 +14,7 @@ public class ChaseState : State
     public LayerMask whatIsPlayer;
     public AttackState attackState;
     public IdleState idleState;
+        public ChaseState chaseState;
     public override State RunCurrentState()
     {
         agent.SetDestination(player.position);
@@ -29,6 +31,11 @@ public class ChaseState : State
     {
         playerInShightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+    }
+    private void Awake()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
     }
     private void OnDrawGizmosSelected()
     {

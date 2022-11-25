@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 public class AttackState : State
 {
+    Animator anim;
     public bool playerInAttackRange;
     public float attackRange;
     public AttackState attackState;
@@ -19,13 +20,18 @@ public class AttackState : State
         if (playerInAttackRange == true)
         {    
             agent.transform.LookAt(player);
-            agent.SetDestination(transform.position);                   
+            agent.SetDestination(transform.position);
             return this;
         }
         else
         {
             return chaseState;
         }
+    }
+    private void Awake()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
     }
     public void Update()
     {      

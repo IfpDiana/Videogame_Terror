@@ -26,7 +26,7 @@ public class IdleState : State
     }
     public void Update()
     {
-        playerInShightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);       
+        playerInShightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
     }
     private void Awake()
     {

@@ -8,6 +8,7 @@ public class AnimationState : MonoBehaviour
     public int isSprintingHash;
     public int isWalkingHash;
     public int isCrouchingHash;
+
     // Start is called before the first frame update
     void Start()
     {
