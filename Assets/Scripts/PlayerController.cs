@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public float crouchingSpeed = -5; //velocidad agachado
     public float gravity = -9.8f; //gravedad
     public float currentVelY = 0;
+    public AudioClip FootstepSounds;
+    int a = 0; //quitar después de hacer los clips.
 
     void Start()
     {
@@ -63,6 +65,15 @@ public class PlayerController : MonoBehaviour
             controller.height = standingHeigth; //pasar de altura agachado a normal
             isCrouching = false;
   
+        }
+
+        if (movement.magnitude > 0)
+        {
+            if (a == 0)
+            {
+                AudioManager.instance.PlayAudio(FootstepSounds);
+                a++;
+            }
         }
 
         //float y = Input.GetAxis("Jump");  //esto lo haces  para crear una variable de salto.
