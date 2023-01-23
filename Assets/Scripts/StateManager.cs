@@ -20,10 +20,10 @@ public class StateManager : MonoBehaviour
             SwitchToNextState(nextState);
         }
     }
-    private void Awake()
-    {
-        agent = GetComponent<NavMeshAgent>();
-    }
+    //private void Awake()
+    //{
+    //    agent = GetComponent<NavMeshAgent>();
+    //}
     private void SwitchToNextState(State nextState)
     {
         currentState = nextState;
