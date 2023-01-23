@@ -992,7 +992,7 @@ PrefabInstance:
     - target: {fileID: -5310757357608355896, guid: eccf904b4edb99d4eae7eca982bb3674, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5ec2b5c958df4ac4793f8de72d012f2d, type: 2}
+      objectReference: {fileID: 2100000, guid: 7aa638a1e60bef84285d1612ebc9bc6d, type: 2}
     - target: {fileID: 919132149155446097, guid: eccf904b4edb99d4eae7eca982bb3674, type: 3}
       propertyPath: m_Name
       value: MAUSOLEO
@@ -1000,7 +1000,7 @@ PrefabInstance:
     - target: {fileID: 1603246306389932429, guid: eccf904b4edb99d4eae7eca982bb3674, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5ec2b5c958df4ac4793f8de72d012f2d, type: 2}
+      objectReference: {fileID: 2100000, guid: 48feb9fe4cc2548419b770a578bfc132, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eccf904b4edb99d4eae7eca982bb3674, type: 3}
 --- !u!4 &361712027 stripped
