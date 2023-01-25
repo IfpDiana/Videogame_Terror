@@ -3756,7 +3756,11 @@ MonoBehaviour:
   crouchingSpeed: -5
   gravity: -15
   currentVelY: 0
-  FootstepSounds: {fileID: 8300000, guid: 7e59d6f5ea0ac6043bf2874dffce86ce, type: 3}
+  FootstepSounds:
+  - {fileID: 8300000, guid: 954d8207ae26e9d45af7155003aa2995, type: 3}
+  - {fileID: 8300000, guid: bbdef53ed3a9e0e48850f29ea25f9c9f, type: 3}
+  - {fileID: 8300000, guid: fa48624d96d9b1147a340505cf906f79, type: 3}
+  footstepLapTime: 2
 --- !u!95 &632113316
 Animator:
   serializedVersion: 4

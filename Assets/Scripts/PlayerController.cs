@@ -19,17 +19,19 @@ public class PlayerController : MonoBehaviour
     public float crouchingSpeed = -5; //velocidad agachado
     public float gravity = -9.8f; //gravedad
     public float currentVelY = 0;
-    public AudioClip FootstepSounds;
-    int a = 0; //quitar después de hacer los clips.
+    public AudioClip[] FootstepSounds;
+    public float footstepLapTime = 2;
+    float currentFootstepTime = 0;
 
     void Start()
     {
         anim = GetComponent<Animator>();
-        controller = GetComponent<CharacterController>();        
+        controller = GetComponent<CharacterController>();
+        currentFootstepTime = footstepLapTime; //Cuando inicie, al caminar empezarán los sonidos. 
     }
 
     void Update()
-    {      
+    {
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
         if (Input.GetKeyDown(KeyCode.Space) && controller.isGrounded == true) //saltar mientras estas en el suelo
@@ -47,39 +49,40 @@ public class PlayerController : MonoBehaviour
         {
             controller.Move(movement * sprintingMultiplayer * Time.deltaTime); //usar la velocidad de sprint 
             isSprinting = true;
-          
+
         }
         else
         {
-            isSprinting = false;          
+            isSprinting = false;
         }
         if (Input.GetKey(KeyCode.LeftControl) && !isSprinting) //agacharse y no poder correr mientras te agachas
         {
             controller.Move(movement * crouchingSpeed * Time.deltaTime); //usar la velocidad de agachado
             controller.height = crouchHeight; //pasar de altura normal a agachado
             isCrouching = true;
-            
+
         }
         else
         {
             controller.height = standingHeigth; //pasar de altura agachado a normal
             isCrouching = false;
-  
+
         }
 
-        if (movement.magnitude > 0)
+        if (movement.magnitude > 0) // si el personaje se mueve
         {
-            if (a == 0)
+            currentFootstepTime += Time.deltaTime; //Esto es un contador, lo que hace que cada dos segundos, se reinicie el audio.
+            if (currentFootstepTime >= footstepLapTime)
             {
-                AudioManager.instance.PlayAudio(FootstepSounds);
-                a++;
+                AudioManager.instance.PlayAudio(FootstepSounds[Random.Range(0, FootstepSounds.Length)]); //Aquí haces que el audio sea random.
+                currentFootstepTime = 0;
             }
         }
 
         //float y = Input.GetAxis("Jump");  //esto lo haces  para crear una variable de salto.
 
         //Vector3 movement = transform.right * x + transform.forward * z;//Esto es para hacer la gravedad, para que se quede en el suelo.
-                                                                       //movement.y /= playerSpeed; //la  velocidad del jugador.
+        //movement.y /= playerSpeed; //la  velocidad del jugador.
 
         //movement *= playerSpeed;
 
@@ -87,8 +90,8 @@ public class PlayerController : MonoBehaviour
 
         //if (Input.GetButtonDown("Jump") && controller.isGrounded) //Aquí le estás diciendo si está en el suelo.
         //{
-            //Yvelocity = 0;
-            //Yvelocity += 60f; //Usas la variable para que te detecte el salto, y le multiplicas una cantidad para conseguir la fuerza de gravedad.
+        //Yvelocity = 0;
+        //Yvelocity += 60f; //Usas la variable para que te detecte el salto, y le multiplicas una cantidad para conseguir la fuerza de gravedad.
         //}
         //Debug.Log(Yvelocity);
         //Yvelocity -= gravityForce * Time.deltaTime;//Aquí lo que haces es que se reste y lo multiplica, IMPORTANTE RESTARLO.
