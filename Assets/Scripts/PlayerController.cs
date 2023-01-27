@@ -69,15 +69,15 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (movement.magnitude > 0) // si el personaje se mueve
-        {
-            currentFootstepTime += Time.deltaTime; //Esto es un contador, lo que hace que cada dos segundos, se reinicie el audio.
-            if (currentFootstepTime >= footstepLapTime)
-            {
-                AudioManager.instance.PlayAudio(FootstepSounds[Random.Range(0, FootstepSounds.Length)]); //Aquí haces que el audio sea random.
-                currentFootstepTime = 0;
-            }
-        }
+        //if (movement.magnitude > 0) // si el personaje se mueve
+        //{
+        //    currentFootstepTime += Time.deltaTime; //Esto es un contador, lo que hace que cada dos segundos, se reinicie el audio.
+        //    if (currentFootstepTime >= footstepLapTime)
+        //    {
+        //        AudioManager.instance.PlayAudio(FootstepSounds[Random.Range(0, FootstepSounds.Length)]); //Aquí haces que el audio sea random.
+        //        currentFootstepTime = 0;
+        //    }
+        //}
 
         //float y = Input.GetAxis("Jump");  //esto lo haces  para crear una variable de salto.
 
@@ -97,5 +97,10 @@ public class PlayerController : MonoBehaviour
         //Yvelocity -= gravityForce * Time.deltaTime;//Aquí lo que haces es que se reste y lo multiplica, IMPORTANTE RESTARLO.
         //movement.y = Yvelocity;
         //movement *= Time.deltaTime; //Esto es la velocidad del movimiento.
+    }
+
+    public void StepRandomSound()
+    {
+        AudioManager.instance.PlayAudio(FootstepSounds[Random.Range(0, FootstepSounds.Length)]);
     }
 }
