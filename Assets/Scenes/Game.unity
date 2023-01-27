@@ -4382,8 +4382,8 @@ MonoBehaviour:
   currentVelY: 0
   FootstepSounds:
   - {fileID: 8300000, guid: 954d8207ae26e9d45af7155003aa2995, type: 3}
-  - {fileID: 8300000, guid: 954d8207ae26e9d45af7155003aa2995, type: 3}
-  - {fileID: 8300000, guid: 954d8207ae26e9d45af7155003aa2995, type: 3}
+  - {fileID: 8300000, guid: 557549b355f090a4eb932eb69a2cc049, type: 3}
+  - {fileID: 8300000, guid: bd6e6677d5223444f842db56cf3a9bab, type: 3}
   footstepLapTime: 2
 --- !u!95 &632113316
 Animator:
