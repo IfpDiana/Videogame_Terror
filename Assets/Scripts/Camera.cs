@@ -24,9 +24,9 @@ public class Camera : MonoBehaviour
         {
             yRotation = 120;
         }
-        if (yRotation <= 30)
+        if (yRotation <= -90)
         {
-            yRotation = 30;
+            yRotation = -90;
         }
         transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(yRotation, 0, 0), 1);
         player.transform.Rotate(Vector3.up * mouseX);
