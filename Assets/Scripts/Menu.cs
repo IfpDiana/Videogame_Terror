@@ -13,6 +13,10 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
     public void Exit()
     {
         Application.Quit();
