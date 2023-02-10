@@ -35,6 +35,22 @@ public class AudioManager : MonoBehaviour
         return source;
     }
 
+    public AudioSource PlayAudio3D(AudioClip clip, Vector3 position, float minDist, float maxDist, float volume = 1)
+    {
+        GameObject sourceObj = new GameObject(clip.name);
+        activeAudioGameObjects.Add(sourceObj);
+        sourceObj.transform.position = position;
+        AudioSource source = sourceObj.AddComponent<AudioSource>();
+        source.clip = clip;
+        source.volume = volume;
+        source.maxDistance = maxDist;
+        source.minDistance = minDist;
+        source.spatialBlend = 1;
+        source.Play();
+        StartCoroutine(PlayAudio(source));
+        return source;
+    }
+
     public AudioSource PlayAudioOnLoop(AudioClip clip, float volume = 1)
     {
         GameObject sourceObj = new GameObject(clip.name);

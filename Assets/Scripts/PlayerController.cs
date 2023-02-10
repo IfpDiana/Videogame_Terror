@@ -27,7 +27,8 @@ public class PlayerController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
-        currentFootstepTime = footstepLapTime; //Cuando inicie, al caminar empezarán los sonidos. 
+        currentFootstepTime = footstepLapTime; //Cuando inicie, al caminar empezarán los sonidos.
+        // AudioManager.instance.PlayAudio3D(FootstepSounds[0], transform.position, 2, 6);
     }
 
     void Update()
