@@ -9,6 +9,10 @@ public class Menu : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None; 
     }
+    public void GoMenu()//regresar al menu principal
+    {
+        SceneManager.LoadScene("Menu");
+    }
     public void Game()
     {
         SceneManager.LoadScene("Game");
