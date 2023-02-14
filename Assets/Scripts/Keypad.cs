@@ -11,7 +11,8 @@ public class Keypad : MonoBehaviour
     private bool ItsAtDoor = false;
     public GameObject CodePanel;
 
-    private string Answer = "1234";
+    private string Answer = "3295";
+
 
     public void Number(int number)
     {
@@ -38,6 +39,8 @@ public class Keypad : MonoBehaviour
         {
             CodePanel.SetActive(true);
         }
+
+   
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,12 +49,14 @@ public class Keypad : MonoBehaviour
         {
             ItsAtDoor = true;
         }
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void OnTriggerExit(Collider other)
     {
         ItsAtDoor = false;
         CodePanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     IEnumerator StopDoor()

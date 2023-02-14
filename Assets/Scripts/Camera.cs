@@ -20,9 +20,9 @@ public class Camera : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;
         yRotation -= mouseY;
-        if (yRotation >= 120)
+        if (yRotation >= 50)
         {
-            yRotation = 120;
+            yRotation = 50;
         }
         if (yRotation <= -90)
         {
